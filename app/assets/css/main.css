@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Wrapper Styles */
+@layer base {
+  .wrapper {
+    --container-width: 100%;
+    --padding: 2rem;
+    width: calc(100% - var(--padding));
+    max-width: var(--container-width);
+    margin-inline: auto;
+  }
+
+  /* Tablet (min-width: 768px) */
+  @media (width >= 768px) {
+    .wrapper {
+      --padding: 4rem;
+    }
+  }
+
+  /* Desktop (min-width: 1280px) */
+  @media (width >= 1280px) {
+    .wrapper {
+      --container-width: 1216px;
+    }
+  }
+
+  /* Desktop (min-width: 1536px) */
+  @media (width >= 1536px) {
+    .wrapper {
+      --container-width: 1440px;
+    }
+  }
+}
+
+/* Typography */
+@layer base {
+  html,
+  body,
+  #__nuxt {
+    @apply text-neutral-500;
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold text-neutral-800;
+  }
+}

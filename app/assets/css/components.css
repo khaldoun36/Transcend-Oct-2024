@@ -1,0 +1,70 @@
+@tailwind components;
+
+@layer components {
+  .button {
+    --button-border-width: 3px;
+    --button-border-style: solid;
+    --button-border-color: transparent;
+
+    /* Layout and spacing */
+    display: inline-flex;
+    align-items: center;
+    padding: theme("spacing[2.5]") theme("spacing.5");
+    border-radius: theme("borderRadius.lg");
+
+    /* Border */
+    outline: var(--button-border-width) var(--button-border-style) var(--button-border-color);
+
+    /* Typography */
+    text-decoration: none;
+    font-weight: var(--button-font-weight, 500);
+    font-size: var(--button-font-size, 0.875rem);
+    letter-spacing: 0.05ch;
+    font-family: "Geist", system-ui, sans-serif;
+    line-height: 1.25rem;
+
+    /* Interactive */
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    /* colors */
+    color: theme("colors.neutral.50");
+  }
+
+  .button[data-button-variant="primary"] {
+    --color-from: theme("colors.primary.500");
+    --color-to: theme("colors.primary.600");
+
+    background: linear-gradient(to bottom, var(--color-from), var(--color-to));
+    box-shadow: 0 2px 6px 0 theme("colors.black/10%");
+  }
+
+  .button[data-button-variant="secondary"] {
+    background: theme("colors.white/10%");
+    box-shadow:
+      0 2px 6px 0 theme("colors.black/10%"),
+      inset 0 -1px 2px 0 theme("colors.white/10%"),
+      inset 0 2px 4px 0 theme("colors.white/10%");
+    backdrop-filter: blur(10px);
+  }
+
+  @media (hover: hover) {
+    .button:hover,
+    .button:focus {
+      --button-outline-color: theme("colors.primary.500/70%");
+      --button-outline-width: 2px;
+      outline-width: var(--button-outline-width, var(--button-border-width));
+      outline-style: var(--button-outline-style, var(--button-border-style));
+      outline-color: var(--button-outline-color, var(--button-border-color));
+      outline-offset: var(--button-outline-offset, calc(var(--button-border-width) * 0.5));
+    }
+    .button[data-button-variant="secondary"]:hover,
+    .button[data-button-variant="secondary"]:focus {
+      --button-outline-color: theme("colors.primary.50/50%");
+      --button-outline-width: 2px;
+      outline-width: var(--button-outline-width, var(--button-border-width));
+      outline-style: var(--button-outline-style, var(--button-border-style));
+      outline-color: var(--button-outline-color, var(--button-border-color));
+      outline-offset: var(--button-outline-offset, calc(var(--button-border-width) * 0.5));
+    }
+  }
+}
