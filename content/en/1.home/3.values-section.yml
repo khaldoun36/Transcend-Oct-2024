@@ -1,20 +1,20 @@
 title: Built around values you can trust
-body: "We're a UAE-based AI company demystifying AI with expert solutions.  Our goal: become the first Emirati AI unicorn by exporting our technology globally."
+body: >
+  We're a UAE-based AI company demystifying AI with expert solutions.
+  Our goal: become the first Emirati AI unicorn by exporting our technology globally.
 values:
-  [
-    {
-      title: "Bespoke",
-      body: "Transcend crafts versatile, custom software solutions, adapting precisely to your organization's needs without relying on external technologies or third parties.",
-      image: "/assets/visual/values-images/bespoke.png",
-    },
-    {
-      title: "Innovative",
-      body: "We use cutting-edge technology and AI research to deliver efficient solutions, including two based on January 2024 studies. ",
-      image: "/assets/visual/values-images/innovative.png",
-    },
-    {
-      title: "Secure",
-      body: "We train our AI models on premises using customer or public datasets, ensuring client data remains private and never leaves their institution.",
-      image: "/assets/visual/values-images/Secure.png",
-    },
-  ]
+  - title: Bespoke
+    body: >
+      Transcend crafts versatile, custom software solutions, adapting precisely
+      to your organization's needs without relying on external technologies or third parties.
+    image: /assets/visual/values-images/bespoke.png
+  - title: Innovative
+    body: >
+      We use cutting-edge technology and AI research to deliver efficient solutions,
+      including two based on January 2024 studies.
+    image: /assets/visual/values-images/innovative.png
+  - title: Secure
+    body: >
+      We train our AI models on premises using customer or public datasets,
+      ensuring client data remains private and never leaves their institution.
+    image: /assets/visual/values-images/secure.png

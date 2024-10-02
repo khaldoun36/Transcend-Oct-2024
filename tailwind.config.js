@@ -12,6 +12,7 @@ export default {
   theme: {
     extend: {
       fontSize: {
+        "4.5xl": ["2.5rem", "3rem"],
         "5.5xl": ["3.5rem", "3.5rem"],
       },
       colors: ({ colors }) => ({

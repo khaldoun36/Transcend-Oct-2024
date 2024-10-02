@@ -1,4 +1,11 @@
 title: Transform your business with cutting-edge AI solutions
-body: Elevate your operations with our bespoke AI solutions, designed to streamline processes, enhance efficiency, and drive growth.
+body: >
+  Elevate your operations with our bespoke AI solutions, designed to streamline
+  processes, enhance efficiency, and drive growth.
 links:
-  [{ label: "Book a meeting", url: "/", variant: "primary" }, { label: "Learn more", url: "/", variant: "secondary" }]
+  - label: Book a meeting
+    url: /
+    variant: primary
+  - label: Learn more
+    url: /
+    variant: secondary
