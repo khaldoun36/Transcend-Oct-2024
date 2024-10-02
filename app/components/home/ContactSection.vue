@@ -1,7 +1,7 @@
 <template>
-  <section class="wrapper grid place-items-center pt-20 md:pt-24 lg:pt-32">
+  <section class="wrapper aspect-[4/3] max-h-[400px] pt-20 md:pt-24 lg:pt-32">
     <div
-      class="relatie grid aspect-[4/3] max-h-[400px] w-full place-content-center rounded-lg border border-black/10 p-8 shadow-sm md:aspect-video"
+      class="flex w-full flex-col items-center justify-center rounded-lg border border-black/10 p-8 shadow-sm md:aspect-video"
     >
       <h2 class="max-w-[35ch] text-balance text-center text-3xl text-neutral-100 md:text-4xl lg:text-5xl">
         {{ contactSection?.title }}
