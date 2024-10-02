@@ -8,7 +8,13 @@
         :key="index"
         class="overflow-clip rounded-lg border border-black/10 bg-neutral-50 shadow-sm"
       >
-        <NuxtImg :src="value.image" :alt="value.title" class="block h-auto w-full object-cover" />
+        <NuxtImg
+          :src="value.image.src"
+          :alt="value.image.alt"
+          :width="value.image.width"
+          :height="value.image.height"
+          class="block h-auto w-full object-cover"
+        />
         <div class="p-8">
           <h3 class="text-4xl">{{ value.title }}</h3>
           <p class="mt-4 text-pretty text-base">{{ value.body }}</p>
