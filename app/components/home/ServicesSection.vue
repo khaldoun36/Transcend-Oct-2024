@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import Card from "@/components/content/Card.vue";
+import Card from "@/components/ui/Card.vue";
 const { locale } = useI18n();
 const currentLocale = locale.value;
 

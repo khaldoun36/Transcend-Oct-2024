@@ -4,9 +4,13 @@
     <div class="main-placeholder">
       <NuxtPage />
     </div>
-    <div class="footer-placeholder h-10 bg-blue-500"></div>
+    <PrimaryFooter />
   </div>
 </template>
+
+<script setup>
+import PrimaryFooter from "~/components/ui/PrimaryFooter.vue";
+</script>
 
 <style>
 html,
