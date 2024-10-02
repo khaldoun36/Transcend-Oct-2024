@@ -15,6 +15,6 @@ values:
     {
       title: "Secure",
       body: "We train our AI models on premises using customer or public datasets, ensuring client data remains private and never leaves their institution.",
-      image: "/assets/visual/values-images/secure.png",
+      image: "/assets/visual/values-images/Secure.png",
     },
   ]
