@@ -20,7 +20,7 @@
       />
 
       <div class="card-content flex flex-col">
-        <h3 class="md:text-4.5xl text-balance text-4xl">{{ title }}</h3>
+        <h3 class="text-balance text-4xl md:text-4.5xl">{{ title }}</h3>
         <p class="mt-6 text-base md:text-lg">{{ body }}</p>
         <p
           v-if="link"
