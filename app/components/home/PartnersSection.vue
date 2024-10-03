@@ -1,12 +1,12 @@
 <template>
   <section class="space-y-8 overflow-hidden">
     <div class="wrapper mt-10 grid place-items-center text-center">
-      <h2 class="text-xl">
+      <h2 class="text-xl !text-neutral-600">
         {{ partnersSection?.title }}
       </h2>
-      <p class="mt-3 text-pretty text-base">
+      <!-- <p class="mt-3 text-pretty text-base">
         {{ partnersSection?.body }}
-      </p>
+      </p> -->
     </div>
     <div class="marquee fadeout-horizontal" :style="{ '--num-items': cleanedImagesPath.length }">
       <ul class="marquee-track">

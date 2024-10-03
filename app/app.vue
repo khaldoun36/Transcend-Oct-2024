@@ -1,6 +1,6 @@
 <template>
   <div class="grid min-h-dvh grid-rows-[auto_1fr_auto]">
-    <div class="header-placeholder bg-primary-500"></div>
+    <PrimaryHeader />
     <div class="main-placeholder">
       <NuxtPage />
     </div>
@@ -10,6 +10,7 @@
 
 <script setup>
 import PrimaryFooter from "~/components/ui/PrimaryFooter.vue";
+import PrimaryHeader from "~/components/ui/header/PrimaryHeader.vue";
 </script>
 
 <style>
