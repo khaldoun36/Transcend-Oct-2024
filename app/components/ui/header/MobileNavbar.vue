@@ -1,23 +1,27 @@
 <template>
-  <nav class="hidden md:block">
-    <ul
-      class="flex items-center gap-4 rounded-full border border-white/10 p-2 transition-colors"
-      :class="{ '!border-black/10': !isDark }"
-    >
-      <li v-for="link in navLinks" :key="link.label">
-        <NuxtLink
-          :to="localePath(link.to)"
-          class="cursor-pointer rounded-full px-3 py-1.5 text-sm font-medium text-neutral-100 backdrop-blur-md transition-colors hover:bg-primary-500/50 active:bg-primary-500/70"
-          :class="{ '!text-neutral-800': !isDark }"
-        >
+  <nav
+    class="fixed inset-0 -z-10 flex min-h-dvh -translate-y-full items-center bg-neutral-100/80 px-4 backdrop-blur-md transition-transform duration-700"
+    :class="{ '!translate-y-0': isOpen }"
+  >
+    <ul class="space-y-16">
+      <li v-for="link in navLinks" :key="link.label" class="text-2xl font-medium text-neutral-800">
+        <NuxtLink :to="localePath(link.to)">
           {{ link.label }}
         </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink :to="localePath('/contact-us')" class="button" data-button-variant="primary">Book a meeting</NuxtLink>
       </li>
     </ul>
   </nav>
 </template>
 
 <script setup>
+const { isOpen = false } = defineProps({
+  isOpen: {
+    type: Boolean,
+  },
+});
 const navLinksEn = [
   {
     label: "Home",
@@ -63,17 +67,6 @@ const localePath = useLocalePath();
 const navLinks = computed(() => {
   return currentLocale === "en" ? navLinksEn : navLinksAr;
 });
-
-const { isDark = false } = defineProps({
-  isDark: {
-    type: Boolean,
-  },
-});
 </script>
 
-<style scoped>
-.router-link-active,
-.router-link-exact-active {
-  @apply border border-black/10 bg-primary-500/20;
-}
-</style>
+<style scoped></style>
