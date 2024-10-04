@@ -1,13 +1,13 @@
 <template>
   <nav class="hidden md:block">
     <ul
-      class="flex items-center justify-between gap-4 rounded-full border border-white/10 px-1.5 py-2 transition-colors"
+      class="flex items-center gap-2 rounded-full border border-white/10 px-[4px] py-2 pb-[9px] transition-colors"
       :class="{ '!border-black/10': !isDark }"
     >
       <li v-for="link in navLinks" :key="link.label">
         <NuxtLink
           :to="localePath(link.to)"
-          class="cursor-pointer rounded-full px-3 py-1.5 text-sm font-medium text-neutral-100 backdrop-blur-md transition-colors hover:bg-primary-500/50 active:bg-primary-500/70"
+          class="cursor-pointer overflow-hidden rounded-full px-4 py-2 text-sm font-medium text-neutral-100 backdrop-blur-md transition-colors hover:bg-primary-500/50 active:bg-primary-500/70"
           :class="{ '!text-neutral-800': !isDark }"
         >
           {{ link.label }}

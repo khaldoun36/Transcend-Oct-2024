@@ -1,6 +1,6 @@
 <template>
   <main class="mx-2 mt-2 rounded-lg border border-black/10">
-    <div class="layout-container wrapper grid place-items-center py-24 pt-32 sm:pb-32 sm:pt-48 md:pb-48 md:pt-64">
+    <div class="layout-container wrapper grid place-items-center pb-24 pt-32 sm:pb-32 sm:pt-48 md:pb-48 md:pt-64">
       <h1 class="max-w-[25ch] text-balance text-center text-4xl text-neutral-100 md:text-5xl lg:text-6xl">
         {{ heroSection?.title }}
       </h1>
