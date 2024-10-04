@@ -10,7 +10,19 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts", "@nuxt/content", "@nuxtjs/i18n", "@nuxt/image", "@vueuse/nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/fonts",
+    "@nuxt/content",
+    "@nuxtjs/i18n",
+    "@nuxt/image",
+    "@vueuse/nuxt",
+    "nuxt-headlessui",
+  ],
+
+  headlessui: {
+    prefix: "Headless",
+  },
 
   // Internationalization Config
   i18n: {

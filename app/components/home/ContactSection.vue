@@ -1,7 +1,7 @@
 <template>
   <section class="wrapper pt-20 md:pt-24 lg:pt-32">
     <div
-      class="contact-background flex flex-col items-center justify-center gap-8 rounded-lg border border-black/10 pb-10 pt-[4.5rem] shadow-sm md:pb-12 md:pt-20 lg:pb-16 lg:pt-24"
+      class="contact-background flex flex-col items-center justify-center gap-8 rounded-lg border border-black/10 p-8 pb-10 pt-[4.5rem] shadow-sm md:pb-12 md:pt-20 lg:pb-16 lg:pt-24"
     >
       <h2 class="max-w-[35ch] text-balance text-center text-3xl text-neutral-100 md:text-4xl lg:text-5xl">
         {{ contactSection?.title }}

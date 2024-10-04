@@ -1,7 +1,7 @@
 <template>
   <header
     class="fixed left-0 right-0 top-0 z-50 border-b border-transparent bg-transparent transition-all duration-300"
-    :class="{ '!border-black/10 !bg-neutral-100/80 !backdrop-blur-md': !isDark }"
+    :class="{ '!border-black/10 !bg-neutral-100/60 !backdrop-blur-lg': !isDark }"
   >
     <div
       class="wrapper mt-4 flex items-center justify-between py-4 transition-all lg:mt-8"
@@ -9,22 +9,20 @@
     >
       <Logo :isDark="!isLogoDark" />
       <Navbar :isDark="!isLogoDark" />
-      <div class="flex items-center gap-4">
+      <div class="hidden items-center gap-4 md:flex">
         <NuxtLink class="button !hidden md:!inline-flex" data-button-variant="primary" :to="localePath('/contact-us')"
           >Book a meeting</NuxtLink
         >
-        <HamburgerMenu @toggleMenu="toggleMenu" :isMenuOpen="openNav" />
       </div>
+      <MobileNavigation />
     </div>
-    <MobileNavbar :isOpen="openNav" />
   </header>
 </template>
 
 <script setup>
 import Logo from "@/components/ui/Logo.vue";
 import Navbar from "@/components/ui/header/Navbar.vue";
-import MobileNavbar from "@/components/ui/header/MobileNavbar.vue";
-import HamburgerMenu from "@/components/ui/header/HamburgerMenu.vue";
+import MobileNavigation from "@/components/ui/header/mobile-nav/MobileNavigation.vue";
 const localePath = useLocalePath();
 
 const { y } = useWindowScroll();

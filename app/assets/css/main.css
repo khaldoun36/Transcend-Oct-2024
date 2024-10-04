@@ -6,7 +6,7 @@
 @layer base {
   .wrapper {
     --container-width: 100%;
-    --padding: 2rem;
+    --padding: 3rem;
     width: calc(100% - var(--padding));
     max-width: var(--container-width);
     margin-inline: auto;
