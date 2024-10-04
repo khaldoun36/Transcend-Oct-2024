@@ -1,7 +1,7 @@
 <template>
   <nav class="hidden md:block">
     <ul
-      class="flex items-center justify-between gap-4 rounded-full border border-white/10 p-2 px-[7px] transition-colors"
+      class="flex items-center justify-between gap-4 rounded-full border border-white/10 px-1.5 py-2 transition-colors"
       :class="{ '!border-black/10': !isDark }"
     >
       <li v-for="link in navLinks" :key="link.label">
@@ -74,6 +74,6 @@ const { isDark = false } = defineProps({
 <style scoped>
 .router-link-active,
 .router-link-exact-active {
-  @apply border-collapse border-primary-500/20 bg-primary-500/20;
+  @apply bg-primary-500/20;
 }
 </style>
