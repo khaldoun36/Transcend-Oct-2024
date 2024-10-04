@@ -14,7 +14,7 @@
           >Book a meeting</NuxtLink
         >
       </div>
-      <MobileNavigation />
+      <MobileNavigation :isDark="!isLogoDark" />
     </div>
   </header>
 </template>

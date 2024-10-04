@@ -1,8 +1,8 @@
 <template>
   <Popover v-slot="{ open, close }" class="md:hidden">
     <PopoverButton
-      class="group flex items-center rounded-lg bg-neutral-100/70 px-4 py-2 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur"
-      style="box-shadow: inset 0 0 8px 0px hsl(0 0% 0% / 0.2)"
+      class="shadow-inset group flex items-center rounded-lg border border-black/10 bg-white/70 px-4 py-2 text-sm font-medium text-neutral-800 shadow-lg backdrop-blur"
+      :class="!isDark ? 'bg-primary-100/20' : ''"
     >
       Menu
       <ChevronDownIcon class="ml-3 h-auto w-2 stroke-neutral-500" />
@@ -18,10 +18,7 @@
       <div v-if="open" class="fixed inset-0 z-50 bg-neutral-800/40 backdrop-blur-sm"></div>
     </Transition>
     <TransitionRoot appear :show="open" as="template">
-      <PopoverPanel
-        focus
-        class="fixed inset-x-4 top-8 z-50 origin-top rounded-lg bg-white p-8 ring-1 ring-neutral-900/5"
-      >
+      <PopoverPanel focus class="fixed inset-x-4 top-8 z-50 origin-top rounded-lg bg-white p-8">
         <div class="flex flex-row-reverse items-center justify-between">
           <PopoverButton aria-label="Close menu" class="-m-1 p-1">
             <CloseIcon class="h-6 w-6 text-neutral-500" />
@@ -101,6 +98,16 @@ const localePath = useLocalePath();
 const navLinks = computed(() => {
   return currentLocale === "en" ? navLinksEn : navLinksAr;
 });
+
+const { isDark = false } = defineProps({
+  isDark: {
+    type: Boolean,
+  },
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+.shadow-inset {
+  box-shadow: inset 0 0 8px 0px hsl(0 0% 0% / 0.2);
+}
+</style>
