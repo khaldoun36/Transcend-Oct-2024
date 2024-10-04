@@ -1,0 +1,6 @@
+---
+title: "Marlin: Ai-powered maritime security solution"
+subTitle: Enhancing maritime safety and security with advanced AI technology
+
+thumbnail: /assets/visual/solutions/1.marlin/thumbnail.jpg
+---

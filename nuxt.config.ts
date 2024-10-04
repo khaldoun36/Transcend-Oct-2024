@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/fonts",
+    "nuxt-content-assets",
     "@nuxt/content",
     "@nuxtjs/i18n",
     "@nuxt/image",
