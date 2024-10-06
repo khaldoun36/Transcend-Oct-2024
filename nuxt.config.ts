@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vueuse/nuxt",
     "nuxt-headlessui",
+    "@nuxthq/studio",
   ],
 
   headlessui: {

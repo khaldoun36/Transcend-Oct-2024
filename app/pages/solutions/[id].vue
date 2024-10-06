@@ -12,13 +12,16 @@
         :src="solution?.thumbnail"
         :alt="solution?.title"
         class="mt-8 aspect-video h-auto w-full rounded-lg border border-black/10 shadow-sm"
+        width="1600"
+        height="900"
       />
     </main>
-    <ContentDoc :path="`/${currentLocale}/solutions/marlin/marlin`" />
+    <KeyFeaturesContainer />
   </div>
 </template>
 
 <script setup>
+import KeyFeaturesContainer from "@/components/content/KeyFeaturesContainer.vue";
 const { locale } = useI18n();
 const currentLocale = locale.value;
 const { data: solution } = await useAsyncData("solutions", () =>
