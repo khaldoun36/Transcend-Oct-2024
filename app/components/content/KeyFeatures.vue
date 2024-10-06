@@ -1,24 +1,27 @@
 <template>
   <section class="pt-10 md:pt-12 lg:pt-16">
+    <h2 class="text-center text-4xl font-bold">Key features</h2>
     <ul
       class="mt-10 grid grid-cols-1 items-center justify-center gap-8 md:mt-12 md:grid-cols-2 lg:mt-16"
       :class="gridCols"
       ref="list"
     >
-      <li v-for="n in 2" :key="n" class="overflow-clip rounded-lg border border-black/10 bg-neutral-50 shadow-sm">
+      <li
+        v-for="(feature, index) in features"
+        :key="index"
+        class="min-h-full overflow-clip rounded-lg border border-black/10 bg-neutral-50 shadow-sm"
+      >
         <NuxtImg
-          src="https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Feature image"
+          :src="feature.image"
+          :alt="feature.title"
           width="1600"
           height="1200"
           class="block aspect-[4/3] h-auto w-full object-cover"
         />
         <div class="p-8">
-          <h3 class="text-4xl">hello wortld</h3>
+          <h3 class="text-3xl">{{ feature.title }}</h3>
           <p class="mt-4 text-pretty text-base">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias provident quam eaque nihil dolorum rerum
-            quisquam cumque dolore explicabo neque odit nobis eligendi maxime architecto, quae nostrum animi
-            voluptatibus ea!
+            {{ feature.description }}
           </p>
         </div>
       </li>
@@ -37,6 +40,8 @@ onMounted(() => {
     gridCols.value = "lg:grid-cols-4";
   }
 });
+
+const { features } = defineProps(["features"]);
 </script>
 
 <style scoped></style>

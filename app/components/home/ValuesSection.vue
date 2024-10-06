@@ -1,6 +1,6 @@
 <template>
   <section class="wrapper grid place-items-center pt-20 md:pt-24 lg:pt-32">
-    <h2 class="lg:text-5.5xl text-balance text-center text-4xl">{{ valuesSection?.title }}</h2>
+    <h2 class="text-balance text-center text-4xl lg:text-5.5xl">{{ valuesSection?.title }}</h2>
     <p class="mt-6 max-w-prose text-pretty text-center text-base md:text-lg">{{ valuesSection?.body }}</p>
     <ul class="mt-10 grid gap-8 md:mt-12 lg:mt-16 lg:grid-cols-3">
       <li
@@ -16,7 +16,7 @@
           class="block h-auto w-full object-cover"
         />
         <div class="p-8">
-          <h3 class="text-4xl">{{ value.title }}</h3>
+          <h3 class="text-3xl">{{ value.title }}</h3>
           <p class="mt-4 text-pretty text-base">{{ value.body }}</p>
         </div>
       </li>

@@ -1,4 +1,28 @@
-title: "Marlin: Ai-powered maritime security solution"
-subTitle: Enhancing maritime safety and security with advanced AI technology
+title: "Marlin: AI-powered maritime security solution"
+subtitle: "Enhancing maritime safety and security with advanced AI technology"
+thumbnail: "/assets/visual/solutions/1.marlin/thumbnail.jpg"
 
-thumbnail: /assets/visual/solutions/1.marlin/thumbnail.jpg
+sectionTitle: "Revolutionizing Maritime Surveillance"
+sectionDescription: "Marlin transforms maritime security by improving object detection capabilities, ensuring safer and more efficient water monitoring."
+
+features:
+  - title: "Advanced AI Technology"
+    description: "Marlin utilizes cutting-edge AI algorithms to analyze maritime data and detect potential security threats."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Real-Time Monitoring"
+    description: "Marlin provides real-time monitoring of maritime activities, allowing for quick response to security incidents."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Intelligent Analytics"
+    description: "Marlin offers advanced analytics to identify patterns and predict future security threats."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+applications:
+  - title: "Advanced AI Technology"
+    description: "Marlin utilizes cutting-edge AI algorithms to analyze maritime data and detect potential security threats."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Real-Time Monitoring"
+    description: "Marlin provides real-time monitoring of maritime activities, allowing for quick response to security incidents."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Intelligent Analytics"
+    description: "Marlin offers advanced analytics to identify patterns and predict future security threats."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

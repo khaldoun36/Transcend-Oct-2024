@@ -5,7 +5,7 @@
         {{ solution?.title }}
       </h1>
       <p class="mt-6 text-center text-base md:text-lg">
-        {{ solution?.subTitle }}
+        {{ solution?.subtitle }}
       </p>
 
       <NuxtImg
@@ -16,12 +16,20 @@
         height="900"
       />
     </main>
-    <KeyFeaturesContainer />
+    <section class="pt-10 md:pt-12 lg:pt-28">
+      <h2 class="mx-auto max-w-[25ch] text-balance text-center text-4xl lg:text-5.5xl">{{ solution?.sectionTitle }}</h2>
+      <p class="mg:text-lg mx-auto max-w-prose text-pretty pt-4 text-center text-base">
+        {{ solution?.sectionDescription }}
+      </p>
+    </section>
+    <KeyFeaturesContainer :features="solution?.features" />
+    <RealWordApplications :features="solution?.applications" />
   </div>
 </template>
 
 <script setup>
-import KeyFeaturesContainer from "@/components/content/KeyFeaturesContainer.vue";
+import KeyFeaturesContainer from "~/components/content/KeyFeatures.vue";
+import RealWordApplications from "~/components/content/RealWordApplications.vue";
 const { locale } = useI18n();
 const currentLocale = locale.value;
 const { data: solution } = await useAsyncData("solutions", () =>
