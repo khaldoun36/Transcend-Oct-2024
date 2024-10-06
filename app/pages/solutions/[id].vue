@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper space-y-10 py-24 pt-32 sm:pb-32 sm:pt-48 md:space-y-12 lg:space-y-8">
+  <div class="wrapper py-24 pt-32 sm:pb-32 sm:pt-48">
     <main>
       <h1 class="mx-auto max-w-[25ch] text-balance text-center text-4.5xl md:text-5xl lg:text-6xl">
         {{ solution?.title }}
@@ -16,9 +16,11 @@
         height="900"
       />
     </main>
-    <section class="pt-10 md:pt-12 lg:pt-28">
-      <h2 class="mx-auto max-w-[25ch] text-balance text-center text-4xl lg:text-5.5xl">{{ solution?.sectionTitle }}</h2>
-      <p class="mg:text-lg mx-auto max-w-prose text-pretty pt-4 text-center text-base">
+    <section class="flex flex-col items-end justify-between gap-4 pt-10 md:pt-12 lg:flex-row lg:pt-28">
+      <h2 class="mx-auto max-w-[25ch] text-balance text-center text-4xl md:text-start lg:text-5.5xl">
+        {{ solution?.sectionTitle }}
+      </h2>
+      <p class="mg:text-lg mx-auto max-w-prose text-pretty text-center text-base md:text-start">
         {{ solution?.sectionDescription }}
       </p>
     </section>

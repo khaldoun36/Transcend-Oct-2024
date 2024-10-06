@@ -2,6 +2,7 @@
   <header
     class="fixed left-0 right-0 top-0 z-50 border-b border-transparent bg-transparent transition-all duration-300"
     :class="{ '!border-black/10 !bg-neutral-100/60 !backdrop-blur-lg': !isDark }"
+    :data-id="id"
   >
     <div
       class="wrapper mt-4 flex items-center justify-between py-4 transition-all lg:mt-8"
@@ -14,7 +15,7 @@
           >Book a meeting</NuxtLink
         >
       </div>
-      <MobileNavigation :isDark="!isLogoDark" />
+      <MobileNavigation />
     </div>
   </header>
 </template>
@@ -33,6 +34,7 @@ const routeNameWithoutLocale = computed(() => {
   return route.name.split("___")[0];
 });
 
+const id = useId();
 const isDark = computed(() => y.value < 10);
 
 const isLogoDark = computed(() => y.value > 10 || routeNameWithoutLocale.value !== "index" || openNav.value);

@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-10 md:pt-12 lg:pt-16">
+  <section class="mt-20 md:mt-24 lg:mt-32">
     <h2 class="text-center text-4xl font-bold">Key features</h2>
     <ul
       class="mt-10 grid grid-cols-1 items-center justify-center gap-8 md:mt-12 md:grid-cols-2 lg:mt-16"
