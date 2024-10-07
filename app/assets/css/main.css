@@ -53,3 +53,31 @@
     @apply font-semibold text-neutral-800;
   }
 }
+
+@layer utilities {
+  .slide-center {
+    --slide-center-transform: 1.5rem;
+    transform: translateX(var(--slide-center-transform));
+  }
+
+  /* Tablet (min-width: 768px) */
+  @media (width >= 768px) {
+    .slide-center {
+      --slide-center-transform: 2rem;
+    }
+  }
+
+  /* Desktop (min-width: 1280px) */
+  @media (width >= 1280px) {
+    .slide-center {
+      --slide-center-transform: calc(max(1216px, 100vw) / 2 - calc(1216px / 2));
+    }
+  }
+
+  /* Desktop (min-width: 1536px) */
+  @media (width >= 1536px) {
+    .slide-center {
+      --slide-center-transform: calc(max(1440px, 100vw) / 2 - calc(1440px / 2));
+    }
+  }
+}

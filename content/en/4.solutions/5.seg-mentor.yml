@@ -1,0 +1,34 @@
+Name: "SegMentor"
+Subtitle: "AI-Driven Segmentation for 2D and 3D Data"
+Tagline: "Empowering Precision Through Intelligent Segmentation"
+TaglineDescription: "SegMentor leverages advanced AI to generate precise segmentation masks for 2D and 3D data. Whether applied to images, videos, or point clouds, SegMentor is designed to enhance object detection and streamline dataset creation for diverse applications."
+
+Header: "Transforming Object Detection and Data Annotation"
+Subheader: "SegMentor: Leading the Way in AI-Driven Segmentation Across Multiple Data Formats"
+
+thumbnail: "/assets/visual/solutions/1.marlin/thumbnail.jpg"
+
+features:
+  - title: "Text-Prompted Segmentation"
+    description: "Easily segment objects with intuitive text prompts for rapid analysis."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "2D & 3D Data Support"
+    description: "Seamlessly processes 2D images, videos, and 3D point clouds for comprehensive segmentation."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Real-Time Application"
+    description: "Delivers real-time segmentation results, ideal for critical use cases such as security footage analysis."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Dataset Generation"
+    description: "Automates the creation and annotation of datasets for computer vision projects, helping to build robust data lakes."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+applications:
+  - title: "Security & Surveillance"
+    description: "Detect and outline dangerous objects in live footage to enhance safety protocols."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Computer Vision Research"
+    description: "Simplifies the process of dataset creation by automating the segmentation and annotation of images, videos, and 3D models."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "3D Modeling and Simulation"
+    description: "Applies to point clouds for detailed segmentation, enhancing simulations and visualizations."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

@@ -35,15 +35,18 @@ const routeNameWithoutLocale = computed(() => {
 });
 
 const id = useId();
-const isDark = computed(() => y.value < 10);
+const isDark = ref(true);
+const isLogoDark = ref(false);
 
-const isLogoDark = computed(() => y.value > 10 || routeNameWithoutLocale.value !== "index" || openNav.value);
+onMounted(() => {
+  isDark.value = y.value < 10;
+  isLogoDark.value = y.value > 10 || routeNameWithoutLocale.value !== "index";
 
-const openNav = ref(false);
-
-const toggleMenu = () => {
-  openNav.value = !openNav.value;
-};
+  watch([y, routeNameWithoutLocale], () => {
+    isDark.value = y.value < 10;
+    isLogoDark.value = y.value > 10 || routeNameWithoutLocale.value !== "index";
+  });
+});
 </script>
 
 <style scoped></style>

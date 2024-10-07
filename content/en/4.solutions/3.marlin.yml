@@ -1,9 +1,12 @@
-title: "Marlin: AI-powered maritime security solution"
-subtitle: "Enhancing maritime safety and security with advanced AI technology"
-thumbnail: "/assets/visual/solutions/1.marlin/thumbnail.jpg"
+Name: "HS Code Matcher"
+Subtitle: "AI-Powered Harmonized System Code Identification"
+Tagline: "Streamlining Product Classification"
+TaglineDescription: "HS Code Matcher revolutionizes product categorization by delivering precise and automated HS code matching, simplifying international trade operations and ensuring compliance with global standards."
 
-sectionTitle: "Revolutionizing Maritime Surveillance"
-sectionDescription: "Marlin transforms maritime security by improving object detection capabilities, ensuring safer and more efficient water monitoring."
+Header: "Accurate HS Code Matching for Global Trade Efficiency"
+Subheader: "HS Code Matcher: Elevating Trade Classification with Advanced AI"
+
+thumbnail: "/assets/visual/solutions/1.marlin/thumbnail.jpg"
 
 features:
   - title: "Advanced AI Technology"

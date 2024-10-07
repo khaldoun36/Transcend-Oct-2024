@@ -1,0 +1,34 @@
+Name: "OmniTrack"
+Subtitle: "AI-Powered People & Vehicle Counting and Tracking Solution"
+Tagline: "Precision Tracking for Enhanced Operational Efficiency"
+TaglineDescription: "OmniTrack revolutionizes object detection by accurately counting and tracking people and vehicles, optimizing logistics, enhancing security, and providing real-time insights for operational management."
+
+Header: "Intelligent Tracking for People & Vehicles"
+Subheader: "OmniTrack: Elevating Security and Operational Efficiency with AI Precision"
+
+thumbnail: "/assets/visual/solutions/1.marlin/thumbnail.jpg"
+
+features:
+  - title: "Accurate Object Identification"
+    description: "Precisely detects and identifies both people and vehicles in various environments."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Real-Time Counting & Tracking"
+    description: "Tracks movement and counts objects in real-time, across multiple camera feeds."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Scalable Integration"
+    description: "Easily integrates with existing camera systems for large-scale operations in factories, free zones, or public spaces."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Operational Efficiency"
+    description: "Optimizes logistics by tracking vehicle movements, improving throughput and security measures."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+applications:
+  - title: "Logistics Management"
+    description: "Track and manage trucks and vehicles in factories and free zones, optimizing fleet efficiency and reducing congestion."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Crowd Management"
+    description: "Count and monitor people at large events, ensuring smooth operations and safety."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Occupancy Monitoring"
+    description: "Assist in managing occupancy levels in public spaces, improving response times and enhancing public safety."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
