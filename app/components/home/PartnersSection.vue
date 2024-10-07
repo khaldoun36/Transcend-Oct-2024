@@ -19,7 +19,7 @@
           <NuxtImg
             :src="path"
             :alt="`Partner ${index + 1}`"
-            class="media-images__image h-auto w-full object-contain"
+            class="media-images__image h-auto w-16 object-contain"
             @load="adjustImageWidth"
           />
         </li>
@@ -97,6 +97,7 @@ onMounted(() => {
   display: grid;
   grid-template-columns: var(--track-width) [track] 0px [resting];
   width: max-content;
+  overflow: hidden;
 }
 
 .marquee-item {

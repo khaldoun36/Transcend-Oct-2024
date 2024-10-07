@@ -22,9 +22,9 @@
         <NuxtImg
           :src="teamMember.image"
           :alt="teamMember.name"
-          class="team-image absolute inset-0 h-full w-full object-cover"
+          class="team-image absolute inset-0 h-full w-full bg-zinc-50 object-cover object-[center_top]"
         />
-        <h2 class="z-50 text-3xl text-neutral-100">{{ teamMember.name }}</h2>
+        <h2 class="z-50 text-3xl text-neutral-800">{{ teamMember.name + " – " + teamMember.title }}</h2>
       </div>
     </div>
   </main>
@@ -44,7 +44,7 @@ const { data: aboutUS } = await useAsyncData("about-us", () =>
 </script>
 
 <style scoped>
-.team-image {
+/* .team-image {
   mask: linear-gradient(180deg, theme("colors.zinc.800") 70%, transparent);
-}
+} */
 </style>

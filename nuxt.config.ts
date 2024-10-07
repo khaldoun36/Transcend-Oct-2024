@@ -10,6 +10,12 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
+  app: {
+    head: {
+      link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
+    },
+  },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/fonts",
