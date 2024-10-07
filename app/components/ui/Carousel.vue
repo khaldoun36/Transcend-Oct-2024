@@ -10,8 +10,8 @@
         @scroll="handleScroll"
         class="carousel no-scrollbar flex h-[432px] snap-x snap-mandatory overflow-x-auto pb-10 md:h-[540px]"
       >
-        <li v-for="(article, index) in list" :key="article.name" class="mr-5 shrink-0 snap-start snap-always last:mr-0">
-          <NuxtLink :to="localePath(`/solutions/${cleanedPathesArray[index]}`)">
+        <li v-for="article in list" :key="article.name" class="mr-5 shrink-0 snap-start snap-always last:mr-0">
+          <NuxtLink :to="localePath(`/solutions/${article.path}`)">
             <div
               class="slide-center relative flex h-full w-[320px] flex-col rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
             >
@@ -106,17 +106,6 @@ const goToPreviousSlide = () => {
 const handleScroll = (event) => {
   sliderPosition.value = event.target.scrollLeft;
 };
-
-const pathes = import.meta.glob(`@@/content/en/4.solutions/*.yml`);
-const pathesArray = Object.keys(pathes);
-
-const cleanPath = (path) => {
-  const fileName = path.split("/").pop(); // Get the file name
-  const nameWithoutExtension = fileName.split(".").slice(0, -1).join("."); // Remove extension
-  return nameWithoutExtension.replace(/^\d+\./, ""); // Remove leading number and dot
-};
-
-const cleanedPathesArray = pathesArray.map(cleanPath);
 </script>
 
 <style scoped>
