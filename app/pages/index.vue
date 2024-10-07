@@ -3,8 +3,8 @@
   <PartnersSection />
   <ValuesSection />
   <ServicesSection />
-  <ContactSection />
   <SolutionsSection />
+  <ContactSection />
 </template>
 
 <script setup>

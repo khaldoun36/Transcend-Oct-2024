@@ -26,16 +26,22 @@
     </section> -->
     <KeyFeaturesContainer :features="solution?.features" />
     <RealWordApplications :features="solution?.applications" />
+    <ContactSection />
   </div>
 </template>
 
 <script setup>
 import KeyFeaturesContainer from "~/components/content/KeyFeatures.vue";
 import RealWordApplications from "~/components/content/RealWordApplications.vue";
+import ContactSection from "~/components/home/ContactSection.vue";
 const { locale } = useI18n();
 const currentLocale = locale.value;
+
+// get the route name from url
+const route = useRoute();
+
 const { data: solution } = await useAsyncData("solutions", () =>
-  queryContent(`/${currentLocale}/solutions/marlin`).findOne()
+  queryContent(`/${currentLocale}/solutions/${route.params.id}`).findOne()
 );
 </script>
 

@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
 
 const images = import.meta.glob("@@/public/assets/visual/partners-logos/*.png");
 

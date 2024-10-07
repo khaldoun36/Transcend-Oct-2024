@@ -10,17 +10,19 @@
         @scroll="handleScroll"
         class="carousel no-scrollbar flex h-[432px] snap-x snap-mandatory overflow-x-auto pb-10 md:h-[540px]"
       >
-        <li v-for="article in list" :key="article._path" class="mr-5 shrink-0 snap-start snap-always last:mr-0">
-          <div
-            class="slide-center relative flex h-full w-[320px] flex-col rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
-          >
-            <!-- <div :class="['flex h-full justify-center', slide.centered ? 'items-center' : 'items-start']">
+        <li v-for="(article, index) in list" :key="article.name" class="mr-5 shrink-0 snap-start snap-always last:mr-0">
+          <NuxtLink :to="localePath(`/solutions/${cleanedPathesArray[index]}`)">
+            <div
+              class="slide-center relative flex h-full w-[320px] flex-col rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
+            >
+              <!-- <div :class="['flex h-full justify-center', slide.centered ? 'items-center' : 'items-start']">
               <img :src="slide.img" :alt="slide.title" :width="slide.imageWidth" :height="slide.imageHeight" />
             </div> -->
-            <h3 class="mt-auto p-6 text-2xl">
-              {{ article.Subtitle }}
-            </h3>
-          </div>
+              <h3 class="mt-auto p-6 text-2xl">
+                {{ article.Subtitle }}
+              </h3>
+            </div>
+          </NuxtLink>
         </li>
       </ul>
     </ContentList>
@@ -70,50 +72,7 @@ import { ref, computed } from "vue";
 const { locale } = useI18n();
 const currentLocale = locale.value;
 
-const slides = [
-  {
-    title: "One Tap Setup",
-    img: "/slide-img/one-tap.jpeg",
-    imageWidth: 343,
-    imageHeight: 375,
-  },
-  {
-    title: "Personalized Spatial Audio",
-    img: "/slide-img/spatial-audio.jpeg",
-    imageWidth: 211,
-    imageHeight: 375,
-  },
-  {
-    title: "Audio Sharing",
-    img: "/slide-img/audio-sharing.jpeg",
-    imageWidth: 265,
-    imageHeight: 352,
-    centered: true,
-  },
-  {
-    title: "Automatic Switching",
-    img: "/slide-img/automatic-switching.jpeg",
-    imageWidth: 336,
-    imageHeight: 100,
-    centered: true,
-  },
-  {
-    title: "Siri",
-    img: "/slide-img/siri.jpeg",
-    imageWidth: 168,
-    imageHeight: 168,
-    centered: true,
-  },
-  {
-    title: "Accessibility",
-    img: "/slide-img/a11y.jpeg",
-    imageWidth: 135,
-    imageHeight: 135,
-    centered: true,
-  },
-];
-
-const slideWidth = 400;
+const slideWidth = 320;
 const slideMargin = 20;
 
 const sliderRef = ref(null);
@@ -147,6 +106,17 @@ const goToPreviousSlide = () => {
 const handleScroll = (event) => {
   sliderPosition.value = event.target.scrollLeft;
 };
+
+const pathes = import.meta.glob(`@@/content/en/4.solutions/*.yml`);
+const pathesArray = Object.keys(pathes);
+
+const cleanPath = (path) => {
+  const fileName = path.split("/").pop(); // Get the file name
+  const nameWithoutExtension = fileName.split(".").slice(0, -1).join("."); // Remove extension
+  return nameWithoutExtension.replace(/^\d+\./, ""); // Remove leading number and dot
+};
+
+const cleanedPathesArray = pathesArray.map(cleanPath);
 </script>
 
 <style scoped>
