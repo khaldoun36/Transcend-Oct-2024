@@ -10,12 +10,6 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  app: {
-    head: {
-      link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
-    },
-  },
-
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/fonts",
@@ -52,5 +46,19 @@ export default defineNuxtConfig({
     strategy: "prefix_except_default",
     // Sets the default locale of the application
     defaultLocale: "en",
+  },
+
+  // Default head values
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      title: "Transcend AI",
+      meta: [
+        { name: "description", content: "Transcend AI" },
+        { name: "format-detection", content: "telephone=no" },
+      ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
   },
 });

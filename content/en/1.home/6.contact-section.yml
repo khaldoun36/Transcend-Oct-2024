@@ -2,8 +2,8 @@ title: Learn how our models can transform your organization
 
 links:
   - title: Book a meeting
-    link: https://calendly.com/
+    link: /contact-us
     isPrimary: true
-  - title: View projects
-    link: https://calendly.com/
+  - title: Learn more
+    link: /about-us
     isPrimary: false

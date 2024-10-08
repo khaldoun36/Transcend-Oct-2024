@@ -4,8 +4,8 @@ body: >
   processes, enhance efficiency, and drive growth.
 links:
   - label: Book a meeting
-    url: /
+    url: /contact-us
     variant: primary
   - label: Learn more
-    url: /
+    url: /about-us
     variant: secondary

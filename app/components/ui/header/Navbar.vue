@@ -8,7 +8,7 @@
         <NuxtLink
           :to="localePath(link.to)"
           class="cursor-pointer overflow-hidden rounded-full px-4 py-2 text-sm font-medium text-neutral-100 backdrop-blur-md transition-colors hover:bg-primary-500/50 active:bg-primary-500/70"
-          :class="{ '!text-neutral-800': !isDark }"
+          :class="[{ '!text-neutral-800': !isDark }, { 'bg-primary-500/20': $route.path === localePath(link.to) }]"
         >
           {{ link.label }}
         </NuxtLink>
@@ -29,11 +29,11 @@ const navLinksEn = [
   },
   {
     label: "Services",
-    to: "/services",
+    to: "/#services",
   },
   {
-    label: "Projects",
-    to: "/projects",
+    label: "Solutions",
+    to: "/#solutions",
   },
 ];
 const navLinksAr = [
@@ -47,11 +47,11 @@ const navLinksAr = [
   },
   {
     label: "خدماتنا",
-    to: "/services  ",
+    to: "/#services",
   },
   {
-    label: "مشاريعنا",
-    to: "/projects",
+    label: "الحلول",
+    to: "/#solutions",
   },
 ];
 
@@ -72,8 +72,8 @@ const { isDark = false } = defineProps({
 </script>
 
 <style scoped>
-.router-link-active,
+/* .router-link-active,
 .router-link-exact-active {
   @apply bg-primary-500/20;
-}
+} */
 </style>

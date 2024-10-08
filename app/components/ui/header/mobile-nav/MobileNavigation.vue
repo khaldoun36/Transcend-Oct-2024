@@ -1,7 +1,7 @@
 <template>
   <Popover v-slot="{ open, close }" class="md:hidden">
     <PopoverButton
-      class="shadow-inset group flex items-center rounded-lg border border-black/10 bg-white/70 px-4 py-2 text-sm font-medium text-neutral-800 shadow-lg backdrop-blur"
+      class="shadow-inset group isolate z-[9999px] flex items-center rounded-lg border border-black/10 bg-white/70 px-4 py-2 text-sm font-medium text-neutral-800 shadow-lg backdrop-blur"
       :class="!isDark ? 'bg-primary-100/20' : ''"
     >
       Menu
@@ -19,28 +19,40 @@
     </Transition>
     <TransitionRoot appear :show="open" as="template">
       <PopoverPanel focus class="fixed inset-x-4 top-8 z-50 origin-top rounded-lg bg-white p-8">
-        <div class="flex flex-row-reverse items-center justify-between">
-          <PopoverButton aria-label="Close menu" class="-m-1 p-1">
-            <CloseIcon class="h-6 w-6 text-neutral-500" />
-          </PopoverButton>
-          <h2 class="text-sm font-medium text-neutral-600">Navigation</h2>
-        </div>
-        <nav class="mt-6">
-          <ul class="-my-2 space-y-4 text-xl text-neutral-800">
-            <MobileNavItem
-              v-for="link in navLinks"
-              :key="link.label"
-              class="relative after:absolute after:-bottom-px after:left-0 after:right-0 after:h-[1px] after:bg-black/5 after:content-['']"
-            >
-              <NuxtLink :to="localePath(link.to)" @click="close">{{ link.label }}</NuxtLink>
-            </MobileNavItem>
-            <!-- <MobileNavItem>
-              <NuxtLink :to="localePath('/contact-us')" @click="close" class="button" data-button-variant="primary"
-                >Book a meeting</NuxtLink
-              >
-            </MobileNavItem> -->
-          </ul>
-        </nav>
+        <TransitionChild
+          as="template"
+          enter="duration-300 ease-out"
+          enter-from="opacity-0 scale-95"
+          enter-to="opacity-100 scale-100"
+          leave="duration-200 ease-in"
+          leave-from="opacity-100 scale-100"
+          leave-to="opacity-0 scale-95"
+        >
+          <div>
+            <div class="flex flex-row-reverse items-center justify-between">
+              <PopoverButton aria-label="Close menu" class="-m-1 p-1">
+                <CloseIcon class="h-6 w-6 text-neutral-500" />
+              </PopoverButton>
+              <h2 class="text-sm font-medium text-neutral-600">Navigation</h2>
+            </div>
+            <nav class="mt-6">
+              <ul class="-my-2 space-y-4 text-xl text-neutral-800">
+                <MobileNavItem
+                  v-for="link in navLinks"
+                  :key="link.label"
+                  class="relative after:absolute after:-bottom-px after:left-0 after:right-0 after:h-[1px] after:bg-black/5 after:content-['']"
+                >
+                  <NuxtLink :to="localePath(link.to)" @click="close">{{ link.label }}</NuxtLink>
+                </MobileNavItem>
+                <!-- <MobileNavItem>
+                  <NuxtLink :to="localePath('/contact-us')" @click="close" class="button" data-button-variant="primary"
+                    >Book a meeting</NuxtLink
+                  >
+                </MobileNavItem> -->
+              </ul>
+            </nav>
+          </div>
+        </TransitionChild>
       </PopoverPanel>
     </TransitionRoot>
   </Popover>
@@ -51,7 +63,7 @@ import MobileNavItem from "./MobileNavItem.vue";
 import CloseIcon from "./CloseIcon.vue";
 import ChevronDownIcon from "./ChevronDownIcon.vue";
 
-import { Popover, PopoverButton, PopoverPanel, TransitionRoot } from "@headlessui/vue";
+import { Popover, PopoverButton, PopoverPanel, TransitionRoot, TransitionChild } from "@headlessui/vue";
 
 const navLinksEn = [
   {
@@ -64,11 +76,11 @@ const navLinksEn = [
   },
   {
     label: "Services",
-    to: "/services",
+    to: "/#services",
   },
   {
-    label: "Projects",
-    to: "/projects",
+    label: "Solutions",
+    to: "/#solutions",
   },
 ];
 const navLinksAr = [
@@ -82,11 +94,11 @@ const navLinksAr = [
   },
   {
     label: "خدماتنا",
-    to: "/services  ",
+    to: "/#services",
   },
   {
-    label: "مشاريعنا",
-    to: "/projects",
+    label: "الحلول",
+    to: "/#solutions",
   },
 ];
 

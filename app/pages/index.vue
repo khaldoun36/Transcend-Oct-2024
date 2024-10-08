@@ -8,6 +8,9 @@
 </template>
 
 <script setup>
+useHead({
+  title: "Transcend AI - Home",
+});
 import HeroSection from "@/components/home/HeroSection.vue";
 import PartnersSection from "@/components/home/PartnersSection.vue";
 import ValuesSection from "@/components/home/ValuesSection.vue";

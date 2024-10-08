@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink v-if="link" :to="localePath('/')" class="block">
+  <NuxtLink v-if="link" :to="localePath('/contact-us')" class="block">
     <div
       class="group relative flex aspect-[4/3] w-full items-end rounded-lg border border-black/10 p-8 pt-16 lg:pt-8"
       ref="cardRef"

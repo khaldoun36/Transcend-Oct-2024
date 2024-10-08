@@ -19,5 +19,6 @@ body,
 #__nuxt {
   font-family: "Geist", system-ui, sans-serif;
   background-color: theme("colors.neutral.100");
+  scroll-behavior: smooth;
 }
 </style>

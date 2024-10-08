@@ -17,20 +17,23 @@
       <div
         v-for="teamMember in aboutUS?.team"
         :key="teamMember.name"
-        class="relative flex aspect-square h-auto min-w-full items-end overflow-hidden rounded-lg bg-black p-8 shadow-sm"
+        class="relative flex aspect-[3/3.5] h-auto min-w-full items-end overflow-hidden rounded-lg bg-neutral-100 p-6 shadow-sm md:aspect-square md:p-8"
       >
         <NuxtImg
           :src="teamMember.image"
           :alt="teamMember.name"
-          class="team-image absolute inset-0 h-full w-full bg-zinc-50 object-cover object-[center_top]"
+          class="team-image absolute inset-0 aspect-square h-auto w-full bg-zinc-50 object-cover object-[center_top]"
         />
-        <h2 class="z-50 text-3xl text-neutral-800">{{ teamMember.name + " – " + teamMember.title }}</h2>
+        <h2 class="isolate text-2xl text-neutral-800 md:text-3xl">{{ teamMember.name + " – " + teamMember.title }}</h2>
       </div>
     </div>
   </main>
 </template>
 
 <script setup>
+useHead({
+  title: "Transcend AI - About Us",
+});
 // Get the current locale from i18n
 const { locale } = useI18n();
 const currentLocale = locale.value;
@@ -44,7 +47,39 @@ const { data: aboutUS } = await useAsyncData("about-us", () =>
 </script>
 
 <style scoped>
-/* .team-image {
-  mask: linear-gradient(180deg, theme("colors.zinc.800") 70%, transparent);
-} */
+.team-image {
+  mask: linear-gradient(
+    180deg,
+    theme("colors.zinc.100") 0%,
+    theme("colors.zinc.100") 10%,
+    theme("colors.zinc.100") 20%,
+    theme("colors.zinc.100") 30%,
+    theme("colors.zinc.100") 40%,
+    theme("colors.zinc.100") 50%,
+    theme("colors.zinc.100") 60%,
+    theme("colors.zinc.100") 70%,
+    theme("colors.zinc.100") 80%,
+    theme("colors.zinc.100") 90%,
+    theme("colors.zinc.100/0%") 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .team-image {
+    mask: linear-gradient(
+      180deg,
+      theme("colors.zinc.100") 0%,
+      theme("colors.zinc.100") 10%,
+      theme("colors.zinc.100") 20%,
+      theme("colors.zinc.100") 30%,
+      theme("colors.zinc.100") 40%,
+      theme("colors.zinc.100") 50%,
+      theme("colors.zinc.100") 60%,
+      theme("colors.zinc.100") 70%,
+      theme("colors.zinc.100") 80%,
+      theme("colors.zinc.100/10%") 90%,
+      theme("colors.zinc.100/20%") 100%
+    );
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-20 md:pt-24 lg:pt-32">
+  <section class="pt-20 md:pt-24 lg:pt-32" id="projects">
     <h2 class="mx-auto max-w-[35ch] text-balance text-center text-4xl lg:text-5.5xl">
       AI models revolutionizing work methods and data classification
     </h2>

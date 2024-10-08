@@ -2,10 +2,14 @@ title: Emirati group with a wealth of skills and experience from a wide range of
 body: Transcend is a UAE-based AI solutions company founded by a team of former government professionals who recognized a gap in the market for dedicated AI-as-a-service providers serving both the government and private sectors. Backed by a talented team of PhD researchers and business consultants, we are committed to demystifying AI by delivering precise, end-to-end solutions tailored to meet the unique needs of our clients. With a vision to expand globally, Transcend aims to become the first Emirati AI unicorn, driving innovation and exporting cutting-edge AI technology to international markets.
 
 team:
-  - name: H.E. Dr. Ahmed Eid Al Mansouri
+  - name: H.E. Dr. Ahmed Eid Al Al Mansoori
     title: Chairman
     image: /assets/visual/team/chairman.png
+    image_width: 3840
+    image_height: 5282
 
-  - name: Yousef Al Hashimi
+  - name: Yousuf Al Hashimi
     title: CEO
     image: /assets/visual/team/ceo.png
+    image_width: 1200
+    image_height: 1560

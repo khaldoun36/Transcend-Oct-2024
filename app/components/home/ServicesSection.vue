@@ -1,6 +1,6 @@
 <template>
-  <section class="wrapper grid place-items-center pt-20 md:pt-24 lg:pt-32">
-    <h2 class="lg:text-5.5xl max-w-[35ch] text-balance text-center text-4xl">{{ servicesSection?.title }}</h2>
+  <section class="wrapper grid place-items-center pt-20 md:pt-24 lg:pt-32" id="services">
+    <h2 class="max-w-[35ch] text-balance text-center text-4xl lg:text-5.5xl">{{ servicesSection?.title }}</h2>
 
     <ul class="mt-10 grid gap-8 md:mt-12 lg:mt-16 lg:grid-cols-2">
       <li v-for="(service, index) in servicesSection?.services" :key="index">
