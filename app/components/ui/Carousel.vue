@@ -9,7 +9,7 @@
         <li v-for="article in list" :key="article.name" class="mr-5 shrink-0 snap-start snap-always last:mr-0">
           <NuxtLink :to="localePath(`/solutions/${article.path}`)">
             <div
-              class="slide-center relative flex h-full w-[320px] flex-col rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
+              class="slide-center relative flex h-full w-[calc(100vw-4rem)] flex-col rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
             >
               <h3 class="mt-auto p-6 text-2xl">
                 {{ article.Subtitle }}
@@ -140,4 +140,9 @@ onMounted(() => {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* .carousel {
+  --mask-color: theme("colors.zinc.100");
+  mask: linear-gradient(90deg, transparent, var(--mask-color, #333) 20%, var(--mask-color, #333) 80%, transparent);
+} */
 </style>

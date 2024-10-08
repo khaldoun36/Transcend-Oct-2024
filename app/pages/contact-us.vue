@@ -133,7 +133,7 @@ const { data: contactUs } = await useAsyncData("contact-us", () =>
 
 // form control
 import { ref } from "vue";
-const WEB3FORMS_ACCESS_KEY = "aec20e4c-f688-4136-bd0b-6395c10d079b";
+const WEB3FORMS_ACCESS_KEY = "63da4544-2ce2-4fa9-9cee-b51a2927b918";
 const name = ref("");
 const email = ref("");
 const message = ref("");
@@ -165,7 +165,11 @@ const submitForm = async () => {
   if (result.success) {
     resetForm();
     // Redirect to home page after successful submission
-    navigateTo(localePath("/"));
+    alert("Message sent successfully");
+
+    setTimeout(() => {
+      navigateTo(localePath("/"));
+    }, 5000);
   }
 };
 </script>
