@@ -17,10 +17,10 @@
             </div>
           </NuxtLink>
         </li>
-        <li class="mr-5 shrink-0 snap-start snap-always opacity-0 last:mr-0">
+        <li class="opacity-0 last:mr-0">
           <NuxtLink>
             <div
-              class="slide-center relative flex h-full w-[320px] flex-col rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
+              class="slide-center relative flex h-full w-[3px] flex-col rounded-lg border border-black/10 bg-neutral-50"
             >
               <h3 class="mt-auto p-6 text-2xl">hello world</h3>
             </div>
