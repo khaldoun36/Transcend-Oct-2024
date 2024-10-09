@@ -1,0 +1,36 @@
+path: "marlin"
+
+Name: "Marlin"
+Subtitle: "AI-Powered Maritime Security Solution"
+Tagline: "Revolutionizing Maritime Surveillance"
+TaglineDescription: "Marlin transforms maritime security by improving object detection capabilities, ensuring safer and more efficient water monitoring."
+
+Header: "Real-Time Threat Detection for Enhanced Maritime Security"
+Subheader: "Marlin: Shaping the Future of Maritime Security with Advanced AI Technology"
+
+thumbnail: "/assets/visual/solutions/1.marlin/thumbnail.jpg"
+
+features:
+  - title: "Enhanced Object Detection"
+    description: "Extends the effective viewing distance of maritime cameras."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Image Enhancement"
+    description: "Enhances image clarity in real-time for optimized surveillance."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Night and Day Functionality"
+    description: "Operates reliably in nighttime, infrared, and daytime conditions."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Seamless System Integration"
+    description: "Easily integrates with existing camera infrastructure for fast deployment, with full on-premises implementation ensuring data security and privacy."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+applications:
+  - title: "Coastal Security"
+    description: "Protect coastal regions by monitoring for unauthorized access and suspicious activity."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Search and Rescue"
+    description: "Accelerates response times by rapidly identifying critical targets in real-time."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Maritime Traffic Monitoring"
+    description: "Enhances traffic safety and efficiency in high-density shipping lanes."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
