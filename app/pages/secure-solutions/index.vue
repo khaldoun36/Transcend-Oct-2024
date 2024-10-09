@@ -1,0 +1,33 @@
+<template>
+  <main class="wrapper layout-container wrapper grid place-items-center pt-32 sm:pt-48 md:pt-64">
+    <h1 class="max-w-[25ch] text-balance text-center text-4xl text-neutral-800 md:text-5xl lg:text-6xl">
+      Secure Ai solutions revolutionizing workflows and data management
+    </h1>
+  </main>
+  <section class="wrapper mt-10 md:mt-12 lg:mt-16">
+    <ContentList :path="`/${currentLocale}/secure-solutions`" v-slot="{ list }">
+      <ul ref="sliderRef" @scroll="handleScroll" class="grid grid-rows-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <li v-for="article in list" :key="article.name" class="aspect-[3/4] h-auto w-full shrink-0">
+          <NuxtLink :to="localePath(`/secure-solutions/${article.path}`)">
+            <div class="relative flex h-full w-full flex-col rounded-lg border border-black/10 bg-neutral-50">
+              <h3 class="mt-auto p-6 text-2xl">
+                {{ article.Subtitle }}
+              </h3>
+            </div>
+          </NuxtLink>
+        </li>
+      </ul>
+    </ContentList>
+  </section>
+</template>
+
+<script setup>
+useHead({
+  title: "Transcend AI - Secure solutions",
+});
+
+const { locale } = useI18n();
+const currentLocale = locale.value;
+</script>
+
+<style scoped></style>

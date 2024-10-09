@@ -1,0 +1,36 @@
+path: "shoaa"
+
+Name: "SHO'AA"
+Subtitle: "Automated X-Ray Vehicle Inspection System"
+Tagline: "Elevating Security with Automated Precision"
+TaglineDescription: "SHO'AA enhances security protocols by automating thorough vehicle inspections, using advanced X-ray imaging and AI to detect hidden threats, ensuring facilities are safeguarded from unauthorized or illegal activities."
+
+Header: "Automated X-Ray Vehicle Inspections for Enhanced Security"
+Subheader: "SHO'AA: Revolutionizing Vehicle Inspection with Advanced AI and X-Ray Technology"
+
+thumbnail: "/assets/visual/solutions/1.marlin/thumbnail.jpg"
+
+features:
+  - title: "Comprehensive Vehicle Scanning"
+    description: "Utilizes Advanced X-Ray Gates to Thoroughly Scan Vehicles Entering or Exiting the Facility."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "AI-Powered Image Analysis"
+    description: "AI Algorithms Accurately Detect Concealed Compartments, Illegal Items, or Individuals Hidden within Vehicles."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Enhanced Detection Accuracy"
+    description: "Reduces Human Error by Automating the Inspection Process, Increasing Security and Reliability."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "On-Premises Implementation"
+    description: "Fully Local Installation, Ensuring Continuous Security Monitoring and Compliance with Data Regulations."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+applications:
+  - title: "Border Control and Customs"
+    description: "Improve Border Security by Efficiently Inspecting Incoming and Outgoing Vehicles for Smuggling or Illegal Cargo."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Critical Infrastructure Protection"
+    description: "Ensure the Security of Sensitive Facilities by Detecting Hidden Threats in Vehicles."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Military and Defense Installations"
+    description: "Enhance Inspection Accuracy and Efficiency for Vehicles Entering High-Security Zones."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

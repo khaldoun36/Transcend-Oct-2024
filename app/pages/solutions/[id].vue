@@ -2,10 +2,10 @@
   <div class="wrapper py-24 pt-32 sm:pb-32 sm:pt-48">
     <main>
       <h1 class="mx-auto max-w-[25ch] text-balance text-center text-4.5xl md:text-5xl lg:text-6xl">
-        {{ solution?.Subtitle }}
+        {{ solution?.Header }}
       </h1>
       <p class="mx-auto mt-6 max-w-[60ch] text-center text-base md:text-lg">
-        {{ solution?.TaglineDescription }}
+        {{ solution?.Subheader }}
       </p>
 
       <NuxtImg

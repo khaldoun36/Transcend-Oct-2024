@@ -1,0 +1,36 @@
+path: "mash"
+
+Name: "MAS'H"
+Subtitle: "AI-Powered Aviation MRO Simulation"
+Tagline: "Redefining Aviation Maintenance Training"
+TaglineDescription: "MAS'H leverages advanced AI-powered 3D scanning to create hyper-accurate vehicle and aircraft simulations. This cutting-edge solution provides a realistic VR environment for safe, efficient maintenance training while preserving real assets from damage."
+
+Header: "Simulated Aviation MRO Training with Unparalleled Precision"
+Subheader: "MAS'H: The Future of Aviation Maintenance Training with AI-Powered Simulations"
+
+thumbnail: "/assets/visual/solutions/1.marlin/thumbnail.jpg"
+
+features:
+  - title: "AI-Enhanced 3D Scanning"
+    description: "Delivers hyper-accurate simulations of vehicles and aircraft, ensuring highly realistic virtual environments."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Realistic VR Training"
+    description: "Provides a safe, immersive space for trainees to develop and refine their skills without the risk of damaging real-world assets."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Automated Testing and Skill Development"
+    description: "Enables automated testing for precise skill assessments, helping trainees improve in a controlled environment."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "On-Premises Implementation"
+    description: "Operates entirely on-site, ensuring full control over data and training environments for enhanced security and accessibility."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+applications:
+  - title: "Aircraft Maintenance Training"
+    description: "Train engineers and technicians in a risk-free, virtual environment, replicating real-world maintenance scenarios."
+    image: "https://images.unsplash.com/photo-1562155955-b73c7402a20b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Vehicle Repair and Overhaul"
+    description: "Simulate vehicle maintenance processes to improve technical proficiency without risking damage to actual vehicles."
+    image: "https://images.unsplash.com/photo-1579619674908-2b36b31323c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  - title: "Automated Testing and Certification"
+    description: "Streamline testing and certification processes by providing accurate, repeatable simulations that ensure consistent skill assessment."
+    image: "https://images.unsplash.com/photo-1561484930-291119937d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

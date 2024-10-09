@@ -9,10 +9,17 @@
         <li v-for="article in list" :key="article.name" class="mr-5 shrink-0 snap-start snap-always last:mr-0">
           <NuxtLink :to="localePath(`/solutions/${article.path}`)">
             <div
-              class="slide-center relative flex h-full w-[calc(100vw-4rem)] flex-col rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
+              class="slide-center relative flex h-full w-[calc(100vw-4rem)] flex-col overflow-hidden rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
             >
-              <h3 class="mt-auto p-6 text-2xl">
-                {{ article.Subtitle }}
+              <NuxtImg
+                :src="article?.thumbnail"
+                :alt="article?.title"
+                class="image-mask absolute inset-0 h-full w-full object-cover object-center"
+                width="1600"
+                height="900"
+              />
+              <h3 class="isolate mt-auto p-6 text-2xl text-neutral-800">
+                {{ article?.Header }}
               </h3>
             </div>
           </NuxtLink>
@@ -145,4 +152,40 @@ onMounted(() => {
   --mask-color: theme("colors.zinc.100");
   mask: linear-gradient(90deg, transparent, var(--mask-color, #333) 20%, var(--mask-color, #333) 80%, transparent);
 } */
+
+.image-mask {
+  mask: linear-gradient(
+    180deg,
+    theme("colors.zinc.100") 0%,
+    theme("colors.zinc.100") 10%,
+    theme("colors.zinc.100") 20%,
+    theme("colors.zinc.100") 30%,
+    theme("colors.zinc.100") 40%,
+    theme("colors.zinc.100") 50%,
+    theme("colors.zinc.100/5%") 65%,
+    theme("colors.zinc.100/5%") 75%,
+    theme("colors.zinc.100/10%") 80%,
+    theme("colors.zinc.100/10%") 90%,
+    theme("colors.zinc.100/10%") 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .image-mask {
+    mask: linear-gradient(
+      180deg,
+      theme("colors.zinc.100") 0%,
+      theme("colors.zinc.100") 10%,
+      theme("colors.zinc.100") 20%,
+      theme("colors.zinc.100") 30%,
+      theme("colors.zinc.100") 40%,
+      theme("colors.zinc.100") 50%,
+      theme("colors.zinc.100") 60%,
+      theme("colors.zinc.100/5%") 75%,
+      theme("colors.zinc.100/10%") 80%,
+      theme("colors.zinc.100/10%") 90%,
+      theme("colors.zinc.100/10%") 100%
+    );
+  }
+}
 </style>

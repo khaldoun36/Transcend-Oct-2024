@@ -80,7 +80,7 @@ const navLinksEn = [
   },
   {
     label: "Solutions",
-    to: "/#solutions",
+    to: "/solutions",
   },
 ];
 const navLinksAr = [
@@ -98,7 +98,7 @@ const navLinksAr = [
   },
   {
     label: "الحلول",
-    to: "/#solutions",
+    to: "/solutions",
   },
 ];
 
