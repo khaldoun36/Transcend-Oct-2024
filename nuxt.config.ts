@@ -61,4 +61,10 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
+
+  // Nuxt Image configuration
+  image: {
+    format: ["avif", "webp"],
+    quality: 80,
+  },
 });

@@ -9,8 +9,17 @@
       <ul ref="sliderRef" @scroll="handleScroll" class="grid grid-rows-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <li v-for="article in list" :key="article.name" class="aspect-[3/4] h-auto w-full shrink-0">
           <NuxtLink :to="localePath(`/solutions/${article.path}`)">
-            <div class="relative flex h-full w-full flex-col rounded-lg border border-black/10 bg-neutral-50">
-              <h3 class="mt-auto p-6 text-2xl">
+            <div
+              class="relative flex h-full w-full flex-col overflow-hidden rounded-lg border border-black/10 bg-neutral-50"
+            >
+              <NuxtImg
+                :src="article?.thumbnail"
+                :alt="article?.title"
+                class="image-mask absolute inset-0 h-full w-full object-cover object-center"
+                width="1600"
+                height="900"
+              />
+              <h3 class="isolate mt-auto p-6 text-2xl text-neutral-800">
                 {{ article?.Header }}
               </h3>
             </div>
