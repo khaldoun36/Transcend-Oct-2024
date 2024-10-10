@@ -7,13 +7,20 @@
       <p class="mx-auto mt-6 max-w-[60ch] text-center text-base md:text-lg">
         {{ solution?.Subheader }}
       </p>
-
+      <video
+        :src="solution?.video"
+        muted
+        loop
+        class="mt-8 aspect-video h-auto w-full rounded-lg border border-black/10 shadow-sm"
+        v-if="solution?.video"
+      />
       <NuxtImg
         :src="solution?.thumbnail"
         :alt="solution?.title"
         class="mt-8 aspect-video h-auto w-full rounded-lg border border-black/10 shadow-sm"
         width="1600"
         height="900"
+        v-else
       />
     </main>
     <!-- <section class="flex flex-col items-end justify-between gap-4 pt-10 md:pt-12 lg:flex-row lg:pt-28">
@@ -34,6 +41,7 @@
 import KeyFeaturesContainer from "~/components/content/KeyFeatures.vue";
 import RealWordApplications from "~/components/content/RealWordApplications.vue";
 import ContactSection from "~/components/home/ContactSection.vue";
+
 const { locale } = useI18n();
 const currentLocale = locale.value;
 

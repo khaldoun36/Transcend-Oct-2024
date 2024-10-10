@@ -6,7 +6,7 @@
   </main>
   <section class="wrapper mt-10 md:mt-12 lg:mt-16">
     <ContentList :path="`/${currentLocale}/secure-solutions`" v-slot="{ list }">
-      <ul ref="sliderRef" @scroll="handleScroll" class="grid grid-rows-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <ul ref="sliderRef" class="grid grid-rows-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         <li v-for="article in list" :key="article.name" class="aspect-[3/4] h-auto w-full shrink-0">
           <NuxtLink :to="localePath(`/secure-solutions/${article.path}`)">
             <div class="relative flex h-full w-full flex-col rounded-lg border border-black/10 bg-neutral-50">
