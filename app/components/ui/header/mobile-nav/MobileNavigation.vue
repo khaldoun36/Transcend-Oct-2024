@@ -1,11 +1,15 @@
 <template>
   <Popover v-slot="{ open, close }" class="md:hidden">
     <PopoverButton
-      class="shadow-inset group isolate z-[9999px] flex items-center rounded-lg border border-black/10 bg-white/70 px-4 py-2 text-sm font-medium text-neutral-800 shadow-lg backdrop-blur"
-      :class="!isDark ? 'bg-primary-100/20' : ''"
+      class="shadow-inset group isolate z-[9999px] flex items-center rounded-lg border border-black/10 bg-white/70 px-5 py-2.5 text-sm font-medium text-neutral-800 shadow-lg backdrop-blur"
+      data-button-variant="primary"
+      :class="{ button: !isDark }"
     >
       Menu
-      <ChevronDownIcon class="ml-3 h-auto w-2 stroke-neutral-500" />
+      <ChevronDownIcon
+        class="ml-2 h-auto w-2.5 stroke-neutral-600 transition-colors"
+        :class="{ 'stroke-neutral-100': !isDark }"
+      />
     </PopoverButton>
     <Transition
       enter-active-class="transition duration-150 ease-out"
@@ -111,10 +115,25 @@ const navLinks = computed(() => {
   return currentLocale === "en" ? navLinksEn : navLinksAr;
 });
 
-const { isDark = false } = defineProps({
-  isDark: {
-    type: Boolean,
-  },
+const { y } = useWindowScroll();
+
+const route = useRoute();
+
+const routeNameWithoutLocale = computed(() => {
+  return route.name.split("___")[0];
+});
+
+const isDark = ref(true);
+const isLogoDark = ref(false);
+
+onMounted(() => {
+  isDark.value = y.value < 10;
+  isLogoDark.value = y.value > 10 || routeNameWithoutLocale.value !== "index";
+
+  watch([y, routeNameWithoutLocale], () => {
+    isDark.value = y.value < 10;
+    isLogoDark.value = y.value > 10 || routeNameWithoutLocale.value !== "index";
+  });
 });
 </script>
 
@@ -123,3 +142,6 @@ const { isDark = false } = defineProps({
   box-shadow: inset 0 0 8px 0px hsl(0 0% 0% / 0.2);
 }
 </style>
+
+<!-- 
+      :class="!isDark ? 'bg-primary-100/20' : ''" -->
