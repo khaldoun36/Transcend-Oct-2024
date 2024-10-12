@@ -22,9 +22,14 @@
                 width="1600"
                 height="900"
               />
-              <h3 class="isolate mt-auto p-6 text-2xl text-neutral-800">
-                {{ article?.Header }}
-              </h3>
+              <div class="isolate mt-auto space-y-3 p-6">
+                <p
+                  class="max-w-fit rounded-full border border-black/10 bg-neutral-950/40 px-5 py-2.5 text-xs font-bold text-neutral-50 backdrop-blur-md"
+                >
+                  {{ article?.Name }}
+                </p>
+                <h3 class="text-2xl text-neutral-800">{{ article?.Header }}</h3>
+              </div>
             </div>
           </NuxtLink>
         </li>
