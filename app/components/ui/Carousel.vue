@@ -34,8 +34,7 @@
   <div class="wrapper mt-8 flex justify-end">
     <button
       @click="goToPreviousSlide"
-      :disabled="isAtStart"
-      class="mr-2 flex size-10 items-center justify-center rounded-full border border-black/10 bg-black/5 disabled:opacity-40"
+      class="mr-2 flex size-10 items-center justify-center rounded-full border border-black/10 bg-black/5"
     >
       <span>
         <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,8 +51,7 @@
     </button>
     <button
       @click="goToNextSlide"
-      :disabled="isAtEnd"
-      class="flex size-10 items-center justify-center rounded-full border border-black/10 bg-black/5 disabled:opacity-40"
+      class="flex size-10 items-center justify-center rounded-full border border-black/10 bg-black/5"
     >
       <span>
         <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,6 +71,7 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from "vue";
+
 import { useI18n } from "vue-i18n";
 
 const { locale } = useI18n();
@@ -82,7 +81,6 @@ const sliderRef = ref(null);
 const sliderPosition = ref(0);
 const totalSlides = ref(0);
 const visibleSlides = ref(0);
-
 const slideWidth = ref(320);
 const slideMargin = 32;
 
@@ -90,8 +88,37 @@ const currentSlide = computed(() => {
   return Math.round(sliderPosition.value / (slideWidth.value + slideMargin));
 });
 
-const isAtStart = computed(() => currentSlide.value === 0);
-const isAtEnd = computed(() => currentSlide.value >= totalSlides.value - visibleSlides.value);
+onMounted(() => {
+  const updateSliderMetrics = () => {
+    if (!sliderRef.value) return;
+
+    const firstSlide = sliderRef.value.children[0];
+    slideWidth.value = firstSlide.offsetWidth;
+    totalSlides.value = sliderRef.value.children.length;
+    visibleSlides.value = Math.floor(sliderRef.value.clientWidth / (slideWidth.value + slideMargin));
+  };
+
+  const updateSlideWidth = () => {
+    if (window.innerWidth > 768) {
+      slideWidth.value = 400 - 8;
+    } else {
+      slideWidth.value = window.innerWidth - 6 * 16; // 6rem converted to pixels
+    }
+    updateSliderMetrics();
+  };
+
+  updateSlideWidth();
+  window.addEventListener("resize", updateSlideWidth);
+
+  watch([totalSlides, visibleSlides], () => {
+    // Ensure current slide is within bounds after metrics update
+    scrollToSlide(currentSlide.value);
+  });
+
+  return () => {
+    window.removeEventListener("resize", updateSlideWidth);
+  };
+});
 
 const scrollToSlide = (slideIndex) => {
   if (!sliderRef.value) return;
@@ -100,6 +127,13 @@ const scrollToSlide = (slideIndex) => {
   const finalIndex = Math.min(Math.max(0, slideIndex), maxIndex);
 
   const scrollPosition = finalIndex * (slideWidth.value + slideMargin);
+
+  console.log({
+    currentSlide: currentSlide.value,
+    finalIndex,
+    scrollPosition,
+  });
+
   sliderRef.value.scrollTo({
     left: scrollPosition,
     behavior: "smooth",
@@ -117,25 +151,6 @@ const goToPreviousSlide = () => {
 const handleScroll = (event) => {
   sliderPosition.value = event.target.scrollLeft;
 };
-
-const updateSliderMetrics = () => {
-  if (!sliderRef.value) return;
-
-  const firstSlide = sliderRef.value.children[0];
-  slideWidth.value = firstSlide.offsetWidth;
-  totalSlides.value = sliderRef.value.children.length;
-  visibleSlides.value = Math.floor(sliderRef.value.clientWidth / (slideWidth.value + slideMargin));
-};
-
-onMounted(() => {
-  updateSliderMetrics();
-  window.addEventListener("resize", updateSliderMetrics);
-});
-
-watch([totalSlides, visibleSlides], () => {
-  // Ensure current slide is within bounds after metrics update
-  scrollToSlide(currentSlide.value);
-});
 </script>
 
 <style scoped>
@@ -149,9 +164,4 @@ watch([totalSlides, visibleSlides], () => {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
-/* .carousel {
-  --mask-color: theme("colors.zinc.100");
-  mask: linear-gradient(90deg, transparent, var(--mask-color, #333) 20%, var(--mask-color, #333) 80%, transparent);
-} */
 </style>

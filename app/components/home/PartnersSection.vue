@@ -8,7 +8,12 @@
         {{ partnersSection?.body }}
       </p> -->
     </div>
-    <div class="marquee fadeout-horizontal" :style="{ '--num-items': cleanedImagesPath.length }">
+    <div
+      ref="marqueeRef"
+      class="marquee fadeout-horizontal"
+      :class="{ 'fade-in': isVisible }"
+      :style="{ '--num-items': cleanedImagesPath.length }"
+    >
       <ul class="marquee-track">
         <li
           class="marquee-item"
@@ -29,7 +34,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 const images = import.meta.glob("@@/public/assets/visual/partners-logos/*.png");
 
@@ -62,6 +67,9 @@ function adjustImageWidth(event) {
   }
 }
 
+const marqueeRef = ref(null);
+const isVisible = ref(false);
+
 onMounted(() => {
   const images = document.querySelectorAll(".media-images__image");
   images.forEach((image) => {
@@ -71,6 +79,22 @@ onMounted(() => {
       image.addEventListener("load", adjustImageWidth);
     }
   });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible.value = true;
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  if (marqueeRef.value) {
+    observer.observe(marqueeRef.value);
+  }
 });
 </script>
 
@@ -90,6 +114,17 @@ onMounted(() => {
 
   --mask-color: theme("colors.zinc.100");
   mask: linear-gradient(90deg, transparent, var(--mask-color, #333) 20%, var(--mask-color, #333) 80%, transparent);
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.marquee.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .marquee-track {
