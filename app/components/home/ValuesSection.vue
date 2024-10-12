@@ -1,20 +1,12 @@
 <template>
-  <section ref="sectionRef" class="wrapper grid place-items-center pt-20 md:pt-24 lg:pt-32">
-    <h2 class="fade-in text-balance text-center text-4xl lg:text-5.5xl" :style="{ animationDelay: '0ms' }">
-      {{ valuesSection?.title }}
-    </h2>
-    <p
-      class="fade-in mt-6 max-w-prose text-pretty text-center text-base md:text-lg"
-      :style="{ animationDelay: '150ms' }"
-    >
-      {{ valuesSection?.body }}
-    </p>
+  <section class="wrapper grid place-items-center pt-20 md:pt-24 lg:pt-32">
+    <h2 class="text-balance text-center text-4xl lg:text-5.5xl">{{ valuesSection?.title }}</h2>
+    <p class="mt-6 max-w-prose text-pretty text-center text-base md:text-lg">{{ valuesSection?.body }}</p>
     <ul class="mt-10 grid gap-8 md:mt-12 lg:mt-16 lg:grid-cols-3">
       <li
         v-for="(value, index) in valuesSection?.values"
         :key="index"
-        class="fade-in overflow-clip rounded-lg border border-black/10 bg-neutral-50 shadow-sm"
-        :style="{ animationDelay: `${(index + 2) * 150}ms` }"
+        class="overflow-clip rounded-lg border border-black/10 bg-neutral-50 shadow-sm"
       >
         <NuxtImg
           :src="value.image.src"
@@ -33,8 +25,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-
 const { locale } = useI18n();
 const currentLocale = locale.value;
 // Fetch the values section content for the current locale
@@ -43,39 +33,6 @@ const currentLocale = locale.value;
 const { data: valuesSection } = await useAsyncData("values-section", () =>
   queryContent(`/${currentLocale}/home/values-section`).findOne()
 );
-
-const sectionRef = ref(null);
-
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  if (sectionRef.value) {
-    observer.observe(sectionRef.value);
-  }
-});
 </script>
 
-<style scoped>
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-.visible .fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
+<style scoped></style>
