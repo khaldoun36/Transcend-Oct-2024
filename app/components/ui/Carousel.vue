@@ -1,15 +1,19 @@
 <template>
-  <div class="no-scrollbar mt-10 h-[500px] max-w-[99vw] overflow-hidden md:mt-12 lg:mt-16">
+  <div class="no-scrollbar mt-10 max-h-[500px] max-w-[99vw] overflow-hidden md:mt-12 lg:mt-16">
     <ContentList :path="`/${currentLocale}/solutions`" v-slot="{ list }">
       <ul
         ref="sliderRef"
         @scroll="handleScroll"
-        class="carousel no-scrollbar flex h-[432px] snap-x snap-mandatory overflow-x-auto pb-10 md:h-[540px]"
+        class="carousel no-scrollbar flex h-[432px] snap-x snap-mandatory overflow-x-auto md:h-[540px] md:pb-10"
       >
-        <li v-for="article in list" :key="article.name" class="mr-5 shrink-0 snap-start snap-always last:mr-0">
+        <li
+          v-for="article in list"
+          :key="article.name"
+          class="shrink-0 snap-start snap-always px-4 first:pl-8 last:pr-8"
+        >
           <NuxtLink :to="localePath(`/solutions/${article.path}`)">
             <div
-              class="slide-center relative flex h-full w-[calc(100vw-4rem)] flex-col overflow-hidden rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
+              class="relative flex h-full w-[calc(100vw-6rem)] flex-col overflow-hidden rounded-lg border border-black/10 bg-neutral-50 md:w-[400px]"
             >
               <NuxtImg
                 :src="article?.thumbnail"
@@ -24,19 +28,10 @@
             </div>
           </NuxtLink>
         </li>
-        <li class="opacity-0 last:mr-0">
-          <NuxtLink>
-            <div
-              class="slide-center relative flex h-full w-[3px] flex-col rounded-lg border border-black/10 bg-neutral-50"
-            >
-              <h3 class="mt-auto p-6 text-2xl">hello world</h3>
-            </div>
-          </NuxtLink>
-        </li>
       </ul>
     </ContentList>
   </div>
-  <div class="wrapper mt-8 hidden justify-end lg:flex">
+  <div class="wrapper mt-8 flex justify-end">
     <button
       @click="goToPreviousSlide"
       :disabled="isAtStart"
@@ -77,40 +72,36 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
+import { useI18n } from "vue-i18n";
 
 const { locale } = useI18n();
 const currentLocale = locale.value;
 
 const sliderRef = ref(null);
 const sliderPosition = ref(0);
+const totalSlides = ref(0);
+const visibleSlides = ref(0);
 
-let slideWidth = 320;
-const slideMargin = 20;
+const slideWidth = ref(320);
+const slideMargin = 32;
 
 const currentSlide = computed(() => {
-  return Math.floor(sliderPosition.value / (slideWidth + slideMargin));
+  return Math.round(sliderPosition.value / (slideWidth.value + slideMargin));
 });
 
-const isAtStart = computed(() => {
-  return sliderPosition.value === 0;
-});
-
-const isAtEnd = computed(() => {
-  if (!sliderRef.value) return false;
-  const buffer = 5; // Buffer to account for rounding errors
-  return sliderRef.value.scrollWidth - sliderRef.value.scrollLeft - sliderRef.value.clientWidth < buffer;
-});
+const isAtStart = computed(() => currentSlide.value === 0);
+const isAtEnd = computed(() => currentSlide.value >= totalSlides.value - visibleSlides.value);
 
 const scrollToSlide = (slideIndex) => {
   if (!sliderRef.value) return;
 
-  const totalSlides = sliderRef.value.children.length;
-  const maxIndex = totalSlides - 1; // Ensure it doesn't scroll beyond the last slide
-  const finalIndex = Math.min(slideIndex, maxIndex); // Prevent going out of bounds
+  const maxIndex = totalSlides.value - visibleSlides.value;
+  const finalIndex = Math.min(Math.max(0, slideIndex), maxIndex);
 
+  const scrollPosition = finalIndex * (slideWidth.value + slideMargin);
   sliderRef.value.scrollTo({
-    left: finalIndex * (slideWidth + slideMargin),
+    left: scrollPosition,
     behavior: "smooth",
   });
 };
@@ -127,12 +118,23 @@ const handleScroll = (event) => {
   sliderPosition.value = event.target.scrollLeft;
 };
 
+const updateSliderMetrics = () => {
+  if (!sliderRef.value) return;
+
+  const firstSlide = sliderRef.value.children[0];
+  slideWidth.value = firstSlide.offsetWidth;
+  totalSlides.value = sliderRef.value.children.length;
+  visibleSlides.value = Math.floor(sliderRef.value.clientWidth / (slideWidth.value + slideMargin));
+};
+
 onMounted(() => {
-  // Dynamically update slide width based on the current slide element width
-  if (sliderRef.value && sliderRef.value.children.length > 0) {
-    const firstSlide = sliderRef.value.children[0];
-    slideWidth = firstSlide.offsetWidth;
-  }
+  updateSliderMetrics();
+  window.addEventListener("resize", updateSliderMetrics);
+});
+
+watch([totalSlides, visibleSlides], () => {
+  // Ensure current slide is within bounds after metrics update
+  scrollToSlide(currentSlide.value);
 });
 </script>
 
