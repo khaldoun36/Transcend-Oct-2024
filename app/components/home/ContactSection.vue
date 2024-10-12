@@ -9,7 +9,8 @@
       <ul class="flex flex-col items-center justify-center gap-8 md:flex-row">
         <li v-for="(link, index) in contactSection?.links" :key="index">
           <NuxtLink
-            :to="localePath(link.link)"
+            :to="link.link"
+            :target="link.link.includes('calendly') ? '_blank' : '_self'"
             class="button"
             :data-button-variant="link.isPrimary ? 'primary' : 'secondary'"
           >

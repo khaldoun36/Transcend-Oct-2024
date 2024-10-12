@@ -11,6 +11,7 @@
         <NuxtLink
           v-for="link in heroSection.links"
           :key="link.url"
+          :target="link.url.includes('calendly') ? '_blank' : '_self'"
           :to="localePath(link.url)"
           class="button"
           :data-button-variant="link.variant"

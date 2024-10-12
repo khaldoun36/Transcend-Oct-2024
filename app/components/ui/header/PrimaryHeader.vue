@@ -11,7 +11,11 @@
       <Logo :isDark="!isLogoDark" />
       <Navbar :isDark="!isLogoDark" />
       <div class="hidden items-center gap-4 md:flex">
-        <NuxtLink class="button !hidden md:!inline-flex" data-button-variant="primary" :to="localePath('/contact-us')"
+        <NuxtLink
+          class="button !hidden md:!inline-flex"
+          data-button-variant="primary"
+          to="https://calendly.com/transcend-info/meeting?month=2024-10"
+          target="_blank"
           >Book a meeting</NuxtLink
         >
       </div>

@@ -4,7 +4,7 @@ body: >
   processes, enhance efficiency, and drive growth.
 links:
   - label: Book a meeting
-    url: /contact-us
+    url: https://calendly.com/transcend-info/meeting?month=2024-10
     variant: primary
   - label: Learn more
     url: /about-us
