@@ -1,11 +1,11 @@
 <template>
-  <NuxtLink v-if="link" to="https://calendly.com/transcend-info/meeting" target="_blank" class="block">
-    <div
-      class="group relative flex aspect-[4.5/4] w-full items-end rounded-lg border border-black/10 p-8 pt-16 lg:pt-8"
-      ref="cardRef"
-      @mousemove="updateMousePosition"
-      @mouseleave="resetMousePosition"
-    >
+  <NuxtLink
+    v-if="link"
+    :to="localePath('https://calendly.com/transcend-info/meeting')"
+    target="_blank"
+    class="group relative flex aspect-[4/3.5] h-auto w-full items-end rounded-lg border border-black/10 p-8 pt-16 lg:pt-8 xl:aspect-[4/2.8]"
+  >
+    <div ref="cardRef" @mousemove="updateMousePosition" @mouseleave="resetMousePosition">
       <div
         class="pointer-events-none absolute -inset-[1.5px] rounded-lg opacity-0 transition-all duration-[350ms] group-hover:opacity-100"
         :style="{

@@ -2,7 +2,7 @@
   <div class="wrapper py-24 pt-32 sm:pb-32 sm:pt-48">
     <main>
       <p
-        class="mx-auto mb-8 max-w-fit rounded-full border border-black/10 bg-neutral-950/30 px-5 py-2.5 text-base font-bold text-neutral-50 backdrop-blur-md"
+        class="mx-auto mb-8 max-w-fit rounded-full border border-black/10 px-5 py-2.5 text-base font-bold text-neutral-800"
       >
         {{ secureSolution?.Name }}
       </p>
