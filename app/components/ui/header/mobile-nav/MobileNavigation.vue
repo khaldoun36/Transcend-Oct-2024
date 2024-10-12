@@ -1,15 +1,25 @@
 <template>
   <Popover v-slot="{ open, close }" class="md:hidden">
     <PopoverButton
-      class="shadow-inset group isolate z-[9999px] flex items-center rounded-lg border border-black/10 bg-white/70 px-5 py-2.5 text-sm font-medium text-neutral-800 shadow-lg backdrop-blur"
-      data-button-variant="primary"
-      :class="{ button: !isDark }"
+      class="shadow-inset group isolate z-[9999px] flex aspect-square items-center rounded-full px-2.5 py-2.5 text-sm font-medium text-neutral-100"
+      :class="{ '!text-neutral-800': !isDark }"
     >
-      Menu
+      <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 8h16M4 16h16"
+        />
+      </svg>
+
+      <!-- Menu
       <ChevronDownIcon
         class="ml-2 h-auto w-2.5 stroke-neutral-600 transition-colors"
-        :class="{ 'stroke-neutral-100': !isDark }"
-      />
+        :class="{ '!stroke-neutral-100': !isDark }"
+      /> -->
     </PopoverButton>
     <Transition
       enter-active-class="transition duration-150 ease-out"
